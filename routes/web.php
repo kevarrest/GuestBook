@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('daftarTamu');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/success', [App\Http\Controllers\GuestController::class, 'success']);
+Route::post('/addGuest', [App\Http\Controllers\GuestController::class, 'addGuest']);
