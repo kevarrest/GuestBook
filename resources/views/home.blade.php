@@ -9,6 +9,8 @@
         <table class="table table-bordered data-table">
             <thead>
             <tr>
+                <th>Tanggal</th>
+                <th>Jam</th>
                 <th>Nama</th>
                 <th>Alamat</th>
                 <th>Keperluan</th>
@@ -17,9 +19,11 @@
             <tbody>
             @foreach($guests as $guest)
             <tr class="odd gradeX">
-              <td>{{$guest->name}}</td>
-              <td>{{$guest->address}}</td>
-              <td>{{$guest->purpose}}</td>
+                <td>{{$guest->created_at->format('j-n-Y')}}</td>
+                <td>{{$guest->created_at->format('H:i')}}</td>
+                <td>{{$guest->name}}</td>
+                <td>{{$guest->address}}</td>
+                <td>{{$guest->purpose}}</td>
             </tr>
             @endforeach
           </tbody>

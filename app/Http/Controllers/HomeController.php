@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $guests=Guest::all();
+        $guests=Guest::orderBy('created_at','desc')->get();
         return view('home', compact('guests'));
     }
 }
