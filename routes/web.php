@@ -23,3 +23,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/success', [App\Http\Controllers\GuestController::class, 'success']);
 Route::post('/addGuest', [App\Http\Controllers\GuestController::class, 'addGuest']);
+
+Route::get('/oid', [App\Http\Controllers\OIDController::class, 'basicClient']);
