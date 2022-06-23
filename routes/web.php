@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('daftarTamu');
+    return redirect('/home');
 });
 
 Auth::routes();
@@ -25,3 +25,5 @@ Route::get('/success', [App\Http\Controllers\GuestController::class, 'success'])
 Route::post('/addGuest', [App\Http\Controllers\GuestController::class, 'addGuest']);
 
 Route::get('/oid', [App\Http\Controllers\OIDController::class, 'basicClient']);
+Route::get('/accesstoken', [App\Http\Controllers\OIDController::class, 'requestResOwnerToken']);
+Route::get('/loginopenid', [App\Http\Controllers\LoginController::class, 'authenticate']);
